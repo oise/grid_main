@@ -1,0 +1,5 @@
+@use 'colours';
+
+@mixin box-shadow {
+  box-shadow: 0 0px 25px 0px colours.$light-gray;
+}

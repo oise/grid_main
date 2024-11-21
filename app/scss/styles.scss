@@ -1,0 +1,111 @@
+$font-family-base: 'Montserrat', sans-serif;
+
+
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/utilities';
+@import "bootstrap/scss/helpers";
+@import "bootstrap/scss/utilities/api";
+
+
+@import 'bootstrap/scss/root';
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/containers';
+@import 'bootstrap/scss/type';
+@import 'bootstrap/scss/buttons';
+@import 'bootstrap/scss/forms';
+@import 'bootstrap/scss/grid';
+
+@import 'bootstrap/scss/alert';
+@import "bootstrap/scss/list-group";
+@import "bootstrap/scss/card";
+
+
+body {
+  min-height: 100vh;
+  height: 100%;
+  font-family: $font-family-base;
+  margin: 0;
+}
+
+.cursor-p {
+  cursor: pointer;
+}
+
+dialog {
+  display: grid;
+  align-content: start;
+  max-inline-size: min(90vw, 200px);
+  min-width: 400px;
+  min-height: 200px;
+  margin: auto;
+  position: fixed;
+  inset: 0;
+  border-radius: 4px;
+  box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  overflow: hidden;
+  border: 0;
+  padding: 16px;
+
+  .#{&}-close {
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 80%;
+    background: lightgray;
+  }
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0-50);
+    backdrop-filter: blur(2px);
+    transition: backdrop-filter .5s ease;
+  }
+}
+
+
+.grid {
+  &-header {
+    display: grid;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-auto-flow: column;
+    grid-gap: 2rem;
+
+    > h5 {
+      width: 200px;
+      font-weight: 700;
+    }
+  }
+
+  &-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-auto-flow: column;
+    grid-gap: 2rem;
+
+  }
+
+  &-cell {
+    width: 200px;
+    height: fit-content;
+  }
+}
+
+[contenteditable] {
+  transition: padding .3s ease-in-out;
+}
+
+[contenteditable]:hover,
+[contenteditable]:focus {
+  padding: .25em;
+}
+
+[contenteditable]:focus {
+  outline: 1px solid $primary-bg-subtle-dark;
+}
